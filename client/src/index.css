@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "salt", "ss01", "ss03";
+  }
+
+  body {
+    background-color: #09090b;
+    color: #e4e4e7;
+  }
+
+  /* Precise scrollbar */
+  ::-webkit-scrollbar { width: 3px; height: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #3f3f46; border-radius: 2px; }
+  ::-webkit-scrollbar-thumb:hover { background: #52525b; }
+
+  /* Selection */
+  ::selection { background: #1d4ed8; color: #fff; }
+
+  /* Focus rings */
+  *:focus-visible { outline: 1.5px solid #3b82f6; outline-offset: 2px; border-radius: 4px; }
+}
+
+@layer utilities {
+  .font-mono-data {
+    font-family: var(--font-mono);
+  }
+
+  /* Subtle gradient borders */
+  .border-gradient {
+    border: 1px solid transparent;
+    background-clip: padding-box;
+  }
+}
