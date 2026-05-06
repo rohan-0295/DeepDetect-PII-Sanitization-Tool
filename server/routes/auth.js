@@ -430,7 +430,7 @@ router.post('/resend-verification', authenticate, async (req, res) => {
     if (user.isEmailVerified) return res.status(400).json({ error: 'Email is already verified' });
 
     const rawToken = await EmailVerificationToken.createToken(user.userId, user.email);
-    await sendEmailVerification(user.email, rawToken, user.displayName);
+    //await sendEmailVerification(user.email, rawToken, user.displayName);
 
     res.json({ message: 'Verification email sent. Please check your inbox.' });
   } catch (err) {
