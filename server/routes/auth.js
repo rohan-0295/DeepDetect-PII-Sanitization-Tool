@@ -40,8 +40,8 @@ const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN || '8h';
 
 const COOKIE_OPTIONS = {
   httpOnly: true,
-  secure: process.env.NODE_ENV === 'production',
-  sameSite: 'strict',
+  secure: true,        // Must be true when using sameSite: 'none'
+  sameSite: 'none',   // This is the magic line that allows Netlify to talk to Render
   maxAge: 8 * 60 * 60 * 1000,
   path: '/',
 };
