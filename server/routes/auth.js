@@ -110,7 +110,7 @@ router.post('/register', authLimiter, [
     // Send verification email
     try {
       const verifyToken = await EmailVerificationToken.createToken(user.userId, user.email);
-      await sendEmailVerification(user.email, verifyToken, user.displayName);
+    //await sendEmailVerification(user.email, verifyToken, user.displayName);
     } catch (emailErr) {
       logger.error(`Verification email failed: ${emailErr.message}`);
       // Don't block registration if email fails
